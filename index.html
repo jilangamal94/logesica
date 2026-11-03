@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>لوجيسكا | شنط حريمي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Reem+Kufi:wght@500;600&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+  <!-- شريط الإعلان -->
+  <div class="announce">الشحن مجاني للطلبات من 1000 ج.م</div>
+
+  <!-- الهيدر -->
+  <header class="header">
+    <h1 aria-label="لوجيسكا"><span class="logo-latin" aria-hidden="true">L<svg class="logo-o" viewBox="0 0 30 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><circle cx="15" cy="26" r="12"/><path d="M8 16.5 C8 4 22 4 22 16.5"/></svg>GISKA</span></h1>
+    <span class="cart-badge" id="cart-count">0</span>
+  </header>
+
+  <!-- الهيرو -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h2>شنطة تعمل فرق</h2>
+        <p>كروس · توت · ظهر · كلتش · محافظ</p>
+        <a href="#shop">تسوقي الآن</a>
+      </div>
+      <div class="hero-arch" role="img" aria-label="شعار لوجيسكا">
+        <span class="logo-latin" aria-hidden="true">L<svg class="logo-o" viewBox="0 0 30 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><circle cx="15" cy="26" r="12"/><path d="M8 16.5 C8 4 22 4 22 16.5"/></svg>GISKA</span>
+        <span class="logo-ar">لوجيسكا</span>
+        <span class="logo-tag">شنط حريمي</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="layout">
+
+    <!-- المنتجات + الفلاتر -->
+    <main id="shop">
+      <h2 class="section-title">منتجاتنا</h2>
+      <section class="controls">
+        <div class="row">
+          <input type="search" id="search" placeholder="ابحثي باسم الشنطة">
+          <select id="sort" aria-label="ترتيب بالسعر">
+            <option value="default">الترتيب</option>
+            <option value="asc">السعر: من الأقل</option>
+            <option value="desc">السعر: من الأعلى</option>
+          </select>
+        </div>
+
+        <div class="categories" id="categories">
+          <button class="cat-btn active" data-category="الكل">الكل</button>
+          <button class="cat-btn" data-category="كروس">كروس</button>
+          <button class="cat-btn" data-category="توت">توت</button>
+          <button class="cat-btn" data-category="ظهر">ظهر</button>
+          <button class="cat-btn" data-category="كلتش">كلتش</button>
+          <button class="cat-btn" data-category="محافظ">محافظ</button>
+        </div>
+      </section>
+
+      <!-- الكروت هتتعرض هنا -->
+      <section class="products" id="products"></section>
+    </main>
+
+    <!-- السلة -->
+    <aside class="cart">
+      <h2>السلة</h2>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-total">
+        <span>الإجمالي</span>
+        <span id="cart-total">0 </span>
+      </div>
+      <p class="ship-note" id="ship-note">أضيفي منتجات للسلة</p>
+      <button class="whatsapp-btn" id="whatsapp-btn" disabled>اطلب على واتساب</button>
+
+      <!-- فورم بيانات الطلب (مخفي لحد ما العميلة تدوس اطلب) -->
+      <form class="order-form" id="order-form" hidden novalidate onsubmit="sendWhatsAppOrder()">
+        <h3>بيانات التوصيل</h3>
+
+        <div class="field">
+          <label for="customer-name">الاسم</label>
+          <input type="text" id="customer-name" autocomplete="name">
+          <span class="error" id="name-error"></span>
+        </div>
+
+        <div class="field">
+          <label for="customer-phone">رقم التليفون</label>
+          <input type="tel" id="customer-phone" inputmode="numeric" maxlength="11" autocomplete="tel" placeholder="01xxxxxxxxx">
+          <span class="error" id="phone-error"></span>
+        </div>
+
+        <div class="field">
+          <label for="customer-address">العنوان</label>
+          <textarea id="customer-address" autocomplete="street-address"></textarea>
+          <span class="error" id="address-error"></span>
+        </div>
+
+        <button type="submit" class="send-btn">أرسلي الطلب على واتساب</button>
+      </form>
+    </aside>
+
+  </div>
+
+  <div class="ornament" aria-hidden="true"></div>
+</div>
+  <!-- المميزات -->
+  <section class="features">
+    <div class="feature">
+      <h3>خامات مختارة بعناية</h3>
+      <p>جودة في كل تفصيلة</p>
+    </div>
+    <div class="feature">
+      <h3>شحن لكل المحافظات</h3>
+      <p>توصيل لحد باب البيت</p>
+    </div>
+    <div class="feature">
+      <h3>استبدال واسترجاع</h3>
+      <p>خلال 14 يوم</p>
+    </div>
+  </section>
+
+  <!-- الفوتر -->
+  <footer class="footer">
+    <span class="logo-latin" aria-label="لوجيسكا">L<svg class="logo-o" viewBox="0 0 30 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><circle cx="15" cy="26" r="12"/><path d="M8 16.5 C8 4 22 4 22 16.5"/></svg>GISKA</span>
+    <div class="rule" aria-hidden="true"></div>
+    <p>© 2026 لوجيسكا. الطلب والتواصل عن طريق واتساب.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body></html>
