@@ -165,7 +165,6 @@ if(whatsappBtn) {
     });
 }
 
-// 2. تأكدي أن دالة إرسال الطلب بتاخد البيانات من الحقول وتبعثها صح
 function sendWhatsAppOrder(event) {
     if(event) {
         event.preventDefault(); // منع الصفحة من إعادة التحميل لو الزر جوه فورم
@@ -209,6 +208,3 @@ function sendWhatsAppOrder(event) {
     let whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
 }
-
-// اربطي هذه الدالة بزر الواتساب في ملف الـ HTML أو برمجياً هكذا:
-// document.getElementById('whatsapp-btn').addEventListener('click', sendWhatsAppOrder);
